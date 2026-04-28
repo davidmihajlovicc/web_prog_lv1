@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+<link rel="stylesheet" href="style/style.css">
+<title>Filmovita</title>
+</head>
+
+<body>
+
+<header class="nav-container">
+    <h1>Filmovita</h1>
+</header>
+
+<main class="grid-container">
+
+<section class="table-container">
+    <h1 class="title">Popis Filmova</h1>
+
+    
+    <div id="filteri">
+        <input type="text" id="filter-genre" placeholder="Žanr">
+
+        <input type="number" id="year-from" placeholder="Godina od">
+        <input type="number" id="year-to" placeholder="Godina do">
+
+        <input type="text" id="filter-country" placeholder="Država">
+
+        <input type="range" id="filter-rating" min="0" max="10" step="0.1" value="5">
+        <span id="rating-value">5</span>
+
+        <button id="btn-filter">Filtriraj</button>
+
+        
+        <select id="sort">
+            <option value="">Sortiraj</option>
+            <option value="year">Godina</option>
+			<option value="duration">Trajanje</option>
+        </select>
+    </div>
+
+
+    <table id="filmovi-tablica">
+        <thead>
+            <tr>
+                <th>Naslov</th>
+                <th>Godina</th>
+                <th>Žanr</th>
+                <th>Trajanje</th>
+                <th>Država</th>
+                <th>Ocjena</th>
+                <th>Akcija</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</section>
+
+
+<aside id="kosarica">
+    <h2>Košarica</h2>
+    <ul id="lista-kosarice"></ul>
+    <button id="potvrdi">Potvrdi</button>
+</aside>
+
+</main>
+
+<footer>
+<p>&copy; 2025 Web Programiranje</p>
+</footer>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Baza podataka o filmovima - LV1 Web programiranje">
+	<link rel="stylesheet" href="/style/style.css">
+	<link rel="stylesheet" href="/style/style_slike.css">
+	<title>Slike</title>
+</head>
+<body>
+
+<header class="nav-container">
+	<h1>Filmovita</h1>
+
+	<details class="dropdown">
+		<summary>Izbornik</summary>
+		<nav>
+			<ul>
+				<li><a href="/index.html">Početna</a></li>
+				<li><a href="/grafikon.html">Grafikon</a></li>
+				<li><a href="/slike">Slike</a></li>
+			</ul>
+		</nav>
+	</details>
+</header>
+
+<main>
+	<section class="galerija">
+		<h1>Galerija slika</h1>
+
+		<div class="galerija-container">
+			<% images.forEach(image => { %>
+				<figure class="galerija_slika">
+					<a href="#slika<%= image.id %>">
+						<img src="<%= image.url %>" loading="lazy" alt="<%= image.title %>">
+					</a>
+					<figcaption><%= image.title %></figcaption>
+				</figure>
+			<% }) %>
+		</div>
+
+
+		<% images.forEach(image => { %>
+			<div id="slika<%= image.id %>" class="lightbox">
+				<a href="#" class="overlay-close"></a>
+				<a href="#" class="close">×</a>
+				<img src="<%= image.url %>" alt="<%= image.title %>">
+			</div>
+		<% }) %>
+
+	</section>
+</main>
+
+<footer>
+</footer>
+
+</body>
+</html>
